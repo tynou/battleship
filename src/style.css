@@ -7,8 +7,131 @@
 
 *:not(i) {
     font-family: "Poppins";
+    color: grey;
 }
 
 :root {
     
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+}
+
+.title {
+    font-size: 2rem;
+    font-weight: 500;
+}
+
+.game-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+}
+
+.battlefield {
+    opacity: 0.6;
+    transform: scale(0.98);
+
+    transition: 100ms;
+}
+
+.battlefield.active {
+    opacity: 1;
+    transform: scale(1);
+}
+
+.invisible {
+    display: none;
+}
+
+.board-row {
+    counter-increment: row;
+}
+
+.board-row::before {
+    display: block;
+    content: counter(row);
+    text-align: center;
+    font-size: 0.75rem;
+    margin-right: 0.25rem;
+}
+
+.board-row:last-child .board-element {
+    counter-increment: column;
+}
+
+.board-row:last-child .board-element::after {
+    display: block;
+    content: counter(column, upper-latin);
+    text-align: center;
+    font-size: 0.75rem;
+}
+
+.board-cell {
+    background-color: #f1f1f1;
+    width: 1.75rem;
+    height: 1.75rem;
+    border: 1px solid grey;
+    transition: 100ms;
+}
+
+.board-cell:not(.ship-hit, .miss):hover {
+    transform: scale(1.25);
+    box-shadow: 0px 0px 5px 0px black;
+}
+
+.board-cell.ship {
+    background-color: darkgrey;
+}
+
+.board-cell.ship-hit {
+    background-color: lightcoral;
+}
+
+.board-cell.miss {
+    background-color: lightblue;
+}
+
+.ship-wrapper {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.d-ship {
+    z-index: 100;
+    transform-origin: center;
+    
+}
+.d-ship.rotated {
+    transform: rotate(90deg);
+    transform-origin: top left;
+}
+
+.ship-cell {
+    background-color: darkgrey;
+    width: 1.75rem;
+    height: 1.75rem;
+    border: 1px solid grey;
+    transition: 100ms;
+}
+
+button {
+    height: 2rem;
+    width: 8rem;
+    border-radius: 4px;
+    border: 1px solid grey;
+    transition: 300ms;
+}
+
+button:hover {
+    filter: brightness(95%);
 }

@@ -3,7 +3,7 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Template</title>
+        <title>Battleship</title>
         
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -12,6 +12,79 @@
         <script src="https://kit.fontawesome.com/43bc06e558.js" crossorigin="anonymous"></script>
     </head>
     <body>
-        
+        <p class="title">Battleship</p>
+        <button class="start">Start game</button>
+
+        <div class="game-container">
+            <div class="draggable-ships">
+                <p>Available ships:</p>
+
+                <div class="ship-wrapper">
+                    <p class="amount">x1</p>
+                    <table class="d-ship s4" data-size="4">
+                        <tbody>
+                            <tr class="ship-row">
+                                <td class="ship-element"><div class="ship-cell"></div></td>
+                                <td class="ship-element"><div class="ship-cell"></div></td>
+                                <td class="ship-element"><div class="ship-cell"></div></td>
+                                <td class="ship-element"><div class="ship-cell"></div></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="ship-wrapper">
+                    <p class="amount">x2</p>
+                    <table class="d-ship s3" data-size="3">
+                        <tbody>
+                            <tr class="ship-row">
+                                <td class="ship-element"><div class="ship-cell"></div></td>
+                                <td class="ship-element"><div class="ship-cell"></div></td>
+                                <td class="ship-element"><div class="ship-cell"></div></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="ship-wrapper">
+                    <p class="amount">x3</p>
+                    <table class="d-ship s2" data-size="2">
+                        <tbody>
+                            <tr class="ship-row">
+                                <td class="ship-element"><div class="ship-cell"></div></td>
+                                <td class="ship-element"><div class="ship-cell"></div></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="ship-wrapper">
+                    <p class="amount">x4</p>
+                    <table class="d-ship s1" data-size="1">
+                        <tbody>
+                            <tr class="ship-row">
+                                <td class="ship-element"><div class="ship-cell"></div></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <div class="board" id="you">
+                <table class="battlefield">
+                    <tbody></tbody>
+                </table>
+                <p class="board-owner">Your board</p>
+            </div>
+    
+            <div class="board" id="bot">
+                <table class="battlefield">
+                    <tbody></tbody>
+                </table>
+                <p class="board-owner">Computer board</p>
+            </div>
+        </div>
+
+        <button class="randomise">Randomise</button>
     </body>
 </html>
